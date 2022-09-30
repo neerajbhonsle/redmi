@@ -1,0 +1,98 @@
+1. what is platform independece?
+ans:- platform independece is java complied code and can run on all operating systems.
+2.what is the difference b/w primitive and non primitive data type?
+ans:- primitives are having states and behaviors, where as non primitive have doesnt have states and behaviors 
+       and examples are int,float,short,long,double,boolean 
+3. explain class and its members with an example?
+ans:- class name is always start with uppercase every java file must have class name. delcared as non static 
+4.write a program to accept two inputs total marks and received marks,calculate percentage and return
+ans:- class MarksCard
+{
+public static void main(String[] args)
+{
+System.out.println("display markscard");
+int N = 2, total_marks = 0;
+        float percentage;
+        int marks[] = { 89,75};
+        for (int i = 0; i < N; i++) {
+            total_marks += marks[i];
+        }
+        System.out.println("Total Marks : " + total_marks);
+        percentage = (total_marks / (float)N);
+        System.out.println("Total Percentage : " + percentage + "%"); 
+}
+}
+5.remove duplicate in an below array int[] values={34,78,90,53,34,11,53,15,78,91,8,4,67,11};
+class Array 
+{
+
+   public static void main(String[] args) 
+   {
+      int arr[] = {34,78,90,53,34,11,53,15,78,91,8,4,67,11};
+      
+      int newArr[] = removeDuplicates(arr);
+      System.out.println("Original array: "+ Arrays.toString(arr));
+      System.out.println("After removing duplicates: " + Arrays.toString(newArr));
+   
+}
+
+public static int[] removeDuplicates(int[] arr) 
+{
+      
+      int j = 0; // index without duplicates
+      int lastIndex = arr.length-1; 
+      for (int i = 0; i < lastIndex; i++) 
+	  {
+         if(arr[i] != arr[i+1]) 
+		 {
+            arr[j++] = arr[i];
+         }
+      }
+      if(arr[j]!= arr[lastIndex])
+         arr[j++] = arr[lastIndex];
+      return Arrays.copyOf(arr, j);
+   }
+	}
+}
+6.explain main method with memory it excute in
+ans:- main method is the starting point for JVM to start execution of a Java program. Without the main() method JVM will not execute the program. 
+it consist of "public static void main(String[] args)"
+public: It is an access specifier. We should use a public keyword before the main() method so that JVM can identify the execution point of the program. If we use private, protected, and default before the main() method, it will not be visible to JVM.
+static: You can make a method static by using the keyword static. We should call the main() method without creating an object. Static methods are the method which invokes without creating the objects, so we do not need any object to call the main() method.
+void: In Java, every method has the return type. Void keyword acknowledges the compiler that main() method does not return any value.
+main(): It is a default signature which is predefined in the JVM. It is called by JVM to execute a program line by line and end the execution after completion of this method. We can also overload the main() method.
+String args[]: The main() method also accepts some data from the user. It accepts a group of strings, which is called a string array. It is used to hold the command line arguments in the form of string values
+
+7.program to find reverse of a numbers?
+ans:-class Main {
+  public static void main(String[] args)
+  {
+    
+    int num = 1234567, reversed = 0;
+
+    for(;num != 0; num /= 10) {
+      int digit = num % 10;
+      reversed = reversed * 10 + digit;
+    }
+
+    System.out.println("Reversed Number: " + reversed);
+  }
+}
+8.program find to hours tp second
+class Conveter {
+ static void ConvertHours(int n)
+{
+ int minutes, seconds;
+ 
+    minutes = n * 60;
+    seconds = n * 3600;
+ 
+    System.out.println( "Minutes = " + minutes+ ", Seconds = " + seconds);
+}
+ 
+class ConveterRunner{
+    public static void main (String[] args){
+    int n = 5;
+    ConvertHours(n);
+    }
+}
